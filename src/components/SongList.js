@@ -1,14 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-function SongList(props) {
+
+export default function SongList(props) {
     const { songs } = props;
     return (
         <div>
-            {songs.map((song) => (
-                <div className="song">{song.title}</div>
+            {songs.map((song, idx) => (
+                <div className="song" key={idx}>{song.title}</div>
             ))}
         </div>
-    );
+    );  
 }
 
 const mapStateToProps = (state) => {
